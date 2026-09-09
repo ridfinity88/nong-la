@@ -1,6 +1,6 @@
 window.APP_CONFIG = Object.freeze({
   LIFF_ID: 'PUT_YOUR_LIFF_ID_HERE',
-  GAS_WEB_APP_URL: 'PUT_YOUR_APPS_SCRIPT_WEB_APP_EXEC_URL_HERE',
+  GAS_WEB_APP_URL: 'https://script.google.com/macros/s/AKfycbwXsDNmIkUwWDvB-f1R_nlmyI525CoCiBIcz_w7KBA5iR6NFColV5UIVrgypUEt0o-Jfw/exec',
   DEPARTMENT: 'วิศวกรรมผลิต 1',
   APP_NAME: 'Leave Management',
   MOBILE_ONLY: true,
