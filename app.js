@@ -74,13 +74,12 @@
     $('dashboardMonth').addEventListener('change', loadDashboard);
   }
 
-  function setStaticValues() {
-    const now = new Date();
-    $('todayLabel').textContent = formatThaiDate(now);
-    $('reportDate').value = formatThaiDate(now);
-    $('department').value = CONFIG.DEPARTMENT;
-    $('dashboardMonth').value = toYearMonth(now);
-  }
+function setStaticValues() {
+  const now = new Date();
+  $('reportDate').value = formatThaiDate(now);
+  $('department').value = CONFIG.DEPARTMENT;
+  $('dashboardMonth').value = toYearMonth(now);
+}
 
   function initBridge() {
     return new Promise((resolve, reject) => {
