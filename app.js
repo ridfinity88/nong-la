@@ -56,7 +56,6 @@
     $('registrationEmployeeId').addEventListener('input', () => clearFieldError('registrationEmployeeId'));
     $('newEmployeeForm').addEventListener('submit', createNewEmployee);
     $('newEmployeeFullName').addEventListener('input', () => clearFieldError('newEmployeeFullName'));
-    $('newEmployeeBackBtn').addEventListener('click', backToEmployeeRegistration);
     $('leaveForm').addEventListener('submit', onReviewSubmit);
     $('reason').addEventListener('input', (e) => $('reasonCount').textContent = e.target.value.length);
     $$('input[name="leaveUnit"]').forEach(el => el.addEventListener('change', updateLeaveUnitUi));
