@@ -68,7 +68,6 @@
     $('confirmSubmitBtn').addEventListener('click', confirmSubmit);
     $('closeLiffBtn').addEventListener('click', closeLiff);
     $('retryFlexBtn').addEventListener('click', retryFlex);
-    $('dashboardShortcut').addEventListener('click', () => switchTab('dashboard'));
     $$('.tab').forEach(btn => btn.addEventListener('click', () => switchTab(btn.dataset.tab)));
     $$('input[name="dashboardMode"]').forEach(el => el.addEventListener('change', loadDashboard));
     $('dashboardMonth').addEventListener('change', loadDashboard);
