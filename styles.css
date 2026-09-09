@@ -53,7 +53,6 @@ button { cursor: pointer; }
   text-align: center;
 }
 
-.app-header 
 .app-header h1 { margin: 2px 0 0; font-size: clamp(26px, 7vw, 36px); letter-spacing: -.03em; }
 .app-header p { margin: 0; }
 .eyebrow { font-size: 11px; letter-spacing: .14em; font-weight: 700; color: var(--primary); }
