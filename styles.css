@@ -40,11 +40,22 @@ button { cursor: pointer; }
 }
 
 .app-header {
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 16px;
   padding: 14px 4px 20px;
+}
+
+.app-header > div {
+  width: 100%;
+  text-align: center;
+}
+
+.app-header .icon-btn {
+  position: absolute;
+  right: 4px;
 }
 .app-header h1 { margin: 2px 0 0; font-size: clamp(26px, 7vw, 36px); letter-spacing: -.03em; }
 .app-header p { margin: 0; }
