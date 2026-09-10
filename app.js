@@ -513,8 +513,8 @@ await loadDashboard();
 
   function renderSuccess(receipt, flexSent, flexError) {
     $('successMessage').textContent = flexSent
-      ? 'บันทึกข้อมูลและส่ง Flex Message เข้า LINE เรียบร้อยแล้ว'
-      : 'บันทึกข้อมูลเรียบร้อยแล้ว แต่ Flex Message ยังส่งไม่สำเร็จ';
+      ? 'บันทึกข้อมูลและส่งใบลาเข้ากลุ่มลาเรียบร้อยแล้ว'
+      : 'บันทึกข้อมูลเรียบร้อยแล้ว แต่ส่งใบลาเข้ากลุ่มลายังส่งไม่สำเร็จ กรุณาแจ้งผู้ดูแลระบบ';
     $('successContent').innerHTML = [
       ['Request ID', receipt.requestId],
       ['ประเภท', leaveTypeLabel(receipt.leave.leaveType)],
