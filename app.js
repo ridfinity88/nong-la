@@ -76,8 +76,10 @@
 
 function setStaticValues() {
   const now = new Date();
-  $('reportDate').value = formatThaiDate(now);
-  $('department').value = CONFIG.DEPARTMENT;
+
+  $('reportDateBadge').textContent =
+    `วันที่แจ้งลา ${formatThaiDate(now)}`;
+
   $('dashboardMonth').value = toYearMonth(now);
 }
 
@@ -322,13 +324,17 @@ function backToEmployeeRegistration() {
   }
 
   function applyEmployeeUi() {
-    const employee = state.employee;
-    $('greetingName').textContent = `สวัสดีคุณ ${employee.fullName}`;
-    $('greetingMeta').textContent = `รหัส ${employee.employeeId} · ${employee.department || CONFIG.DEPARTMENT}`;
-    $('employeeAvatar').src = employee.imageUrl || placeholderAvatar(employee.fullName);
-    $('formEmployeeName').textContent = employee.fullName;
-    $('formEmployeeMeta').textContent = `รหัส ${employee.employeeId} · ${employee.department || CONFIG.DEPARTMENT}`;
-  }
+  const employee = state.employee;
+
+  $('greetingName').textContent =
+    `สวัสดีคุณ ${employee.fullName}`;
+
+  $('greetingMeta').textContent =
+    `รหัส ${employee.employeeId} · ${employee.department || CONFIG.DEPARTMENT}`;
+
+  $('employeeAvatar').src =
+    employee.imageUrl || placeholderAvatar(employee.fullName);
+}
 
   function updateLeaveUnitUi() {
     const unit = selectedValue('leaveUnit');
