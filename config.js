@@ -1,8 +1,8 @@
 window.APP_CONFIG = Object.freeze({
   LIFF_ID: '2011499508-tPfya4Ma',
-  GAS_WEB_APP_URL: 'https://script.google.com/macros/s/AKfycbw8EuLR0aOsOiuaCLhZVXuQs8PWiFCkf5_6yCwxpVbtRkWtppRDAqmWN6SFWsnN3iHnoA/exec',
+  GAS_WEB_APP_URL: 'https://script.google.com/macros/s/AKfycbyfvFcu8xxHEXWdhNxEuljicWAt2Cv43lHt5tjQPFSMdAFM2TNyFgej_XrFhk_bgTs47Q/exec',
   DEPARTMENT: 'วิศวกรรมผลิต 1',
-  APP_NAME: 'สวัสดีหนุ่มกะ(จะ)ลา',
+  APP_NAME: 'Leave Management',
   MOBILE_ONLY: true,
   REQUIRE_GROUP_CONTEXT: true,
   DEFAULT_DASHBOARD_MODE: 'DAILY',
