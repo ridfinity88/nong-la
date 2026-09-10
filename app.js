@@ -444,7 +444,6 @@ function backToEmployeeRegistration() {
         request: state.pendingSubmission
       });
       state.lastReceipt = receipt;
-      closeModal('reviewModal');
 
       let flexSent = false;
       let flexError = null;
@@ -469,8 +468,8 @@ function backToEmployeeRegistration() {
       }
 
       renderSuccess(receipt, flexSent, flexError);
-      openModal('successModal');
-      await loadDashboard();
+swapModal('reviewModal', 'successModal');
+await loadDashboard();
     } catch (error) {
       showToast(error.userMessage || 'บันทึกข้อมูลไม่สำเร็จ', true);
     } finally {
@@ -610,6 +609,20 @@ function backToEmployeeRegistration() {
 
   function openModal(id) { $(id).classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
   function closeModal(id) { $(id).classList.add('hidden'); document.body.style.overflow = ''; }
+
+  function swapModal(fromId, toId) {
+  const fromModal = $(fromId);
+  const toModal = $(toId);
+
+  // เปิด POP UP ใหม่ก่อน
+  toModal.classList.remove('hidden');
+
+  // แล้วจึงซ่อน POP UP เดิม
+  fromModal.classList.add('hidden');
+
+  // ให้พื้นหลังยังคงล็อกอยู่ตลอด
+  document.body.style.overflow = 'hidden';
+}
 
   function closeLiff() {
     if (liff.isInClient()) liff.closeWindow();
