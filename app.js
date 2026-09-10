@@ -296,6 +296,8 @@ function backToEmployeeRegistration() {
       return;
     }
 
+    const employeeType = selectedValue('newEmployeeType');
+
     const btn = $('newEmployeeSubmitBtn');
     setButtonLoading(btn, true, 'กำลังบันทึกข้อมูล...');
     try {
