@@ -82,6 +82,39 @@
             <small id="newEmployeeFullNameError" class="field-error"></small>
           </label>
 
+<fieldset class="field-set">
+  <legend>รายวันหรือรายเดือน<b>*</b></legend>
+
+  <div class="segment-control">
+    <label>
+      <input
+        type="radio"
+        name="newEmployeeType"
+        value="รายวัน"
+      >
+      <span>รายวัน</span>
+    </label>
+
+    <label>
+      <input
+        type="radio"
+        name="newEmployeeType"
+        value="รายเดือน"
+      >
+      <span>รายเดือน</span>
+    </label>
+  </div>
+
+  <small class="field-hint">
+    รายวัน 8 ชั่วโมง = 1 วัน · รายเดือน 9 ชั่วโมง = 1 วัน
+  </small>
+
+  <small
+    id="newEmployeeTypeError"
+    class="field-error">
+  </small>
+</fieldset>
+          
           <div class="default-profile-note">
             <span class="default-profile-icon">i</span>
             <div>
