@@ -136,22 +136,34 @@
               </fieldset>
 
               <fieldset class="field-set">
-                <legend>เวลาในการลา <b>*</b></legend>
-                <div class="segment-control">
-                  <label><input type="radio" name="leaveUnit" value="HOUR" checked><span>ลาเป็นชั่วโมง</span></label>
-                  <label><input type="radio" name="leaveUnit" value="DAY"><span>ลาเป็นวัน</span></label>
-                </div>
-              </fieldset>
+  <legend>เวลาในการลา <b>*</b></legend>
+  <div class="segment-control">
+    <label><input type="radio" name="leaveUnit" value="DAY" checked><span>ลาเป็นวัน</span></label>
+    <label><input type="radio" name="leaveUnit" value="HOUR"><span>ลาเป็นชั่วโมง</span></label>
+  </div>
+</fieldset>
 
               <label class="field" for="leaveAmount">
-                <span id="leaveAmountLabel">จำนวนชั่วโมง <b>*</b></span>
-                <div class="number-box">
-                  <input id="leaveAmount" name="leaveAmount" type="number" inputmode="decimal" min="0.5" step="0.5" placeholder="เช่น 0.5, 1, 1.5, 5.5">
-                  <span id="leaveAmountSuffix">ชั่วโมง</span>
-                </div>
-                <small id="leaveAmountHint" class="field-hint">อนุญาตเฉพาะครั้งละ 0.5 ชั่วโมง เช่น 0.5, 1, 1.5, 2</small>
-                <small id="leaveAmountError" class="field-error"></small>
-              </label>
+  <span id="leaveAmountLabel">จำนวนวัน <b>*</b></span>
+
+  <div class="number-box">
+    <input id="leaveAmount"
+           name="leaveAmount"
+           type="number"
+           inputmode="numeric"
+           min="1"
+           step="1"
+           placeholder="เช่น 1, 2, 3">
+
+    <span id="leaveAmountSuffix">วัน</span>
+  </div>
+
+  <small id="leaveAmountHint" class="field-hint">
+    กำหนดจำนวนวันเป็นจำนวนเต็ม เช่น 1, 2, 3 วัน
+  </small>
+
+  <small id="leaveAmountError" class="field-error"></small>
+</label>
 
               <div class="field-grid two-col">
                 <label class="field" for="leaveFrom">
