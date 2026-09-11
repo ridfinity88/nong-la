@@ -457,3 +457,85 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     max-width: 100% !important;
   }
 }
+
+/* =====================================================
+   DATE PLACEHOLDER
+   iOS + Android + LINE LIFF
+   ===================================================== */
+
+.date-input-wrap {
+  position: relative;
+
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+
+  box-sizing: border-box;
+}
+
+
+/* ช่องวันที่ */
+.date-input-wrap input[type="date"] {
+  position: relative;
+
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+
+  box-sizing: border-box !important;
+
+  z-index: 1;
+}
+
+
+/* ข้อความ "กรุณาเลือกวันที่" */
+.date-placeholder {
+  position: absolute;
+
+  left: 14px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  z-index: 2;
+
+  color: #94A3B8;
+
+  font-size: 16px;
+  font-weight: 400;
+
+  pointer-events: none;
+
+  background: var(--surface-2);
+
+  padding-right: 8px;
+}
+
+
+/* เมื่อกดเลือกวันที่แล้ว ซ่อนข้อความ */
+.date-input-wrap input[type="date"]:valid
++ .date-placeholder {
+  display: none;
+}
+
+
+/* ขณะกำลังเลือกวันที่ ให้ซ่อนข้อความ */
+.date-input-wrap input[type="date"]:focus
++ .date-placeholder {
+  display: none;
+}
+
+
+/* ซ่อนข้อความวันที่มาตรฐานของ browser
+   เฉพาะตอนที่ยังไม่ได้เลือกวันที่ */
+.date-input-wrap
+input[type="date"]:invalid::-webkit-datetime-edit {
+  color: transparent;
+}
+
+
+/* เมื่อมีวันที่แล้ว ให้แสดงวันที่ตามปกติ */
+.date-input-wrap
+input[type="date"]:valid::-webkit-datetime-edit {
+  color: var(--text);
+}
