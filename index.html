@@ -199,17 +199,55 @@
 </label>
 
               <div class="field-grid two-col">
-                <label class="field" for="leaveFrom">
-                  <span>วันที่ต้องการลา <b>*</b></span>
-                  <input id="leaveFrom" name="leaveFrom" type="date">
-                  <small id="leaveFromError" class="field-error"></small>
-                </label>
-                <label class="field" for="leaveTo">
-                  <span>ลาถึงวันที่ <b>*</b></span>
-                  <input id="leaveTo" name="leaveTo" type="date">
-                  <small id="leaveToError" class="field-error"></small>
-                </label>
-              </div>
+
+  <label class="field" for="leaveFrom">
+    <span>วันที่ต้องการลา <b>*</b></span>
+
+    <div class="date-input-wrap">
+      <input
+        id="leaveFrom"
+        name="leaveFrom"
+        type="date"
+        required
+        aria-label="กรุณาเลือกวันที่"
+      >
+
+      <span class="date-placeholder">
+        กรุณาเลือกวันที่
+      </span>
+    </div>
+
+    <small
+      id="leaveFromError"
+      class="field-error">
+    </small>
+  </label>
+
+
+  <label class="field" for="leaveTo">
+    <span>ลาถึงวันที่ <b>*</b></span>
+
+    <div class="date-input-wrap">
+      <input
+        id="leaveTo"
+        name="leaveTo"
+        type="date"
+        required
+        aria-label="กรุณาเลือกวันที่"
+      >
+
+      <span class="date-placeholder">
+        กรุณาเลือกวันที่
+      </span>
+    </div>
+
+    <small
+      id="leaveToError"
+      class="field-error">
+    </small>
+  </label>
+
+</div>
 
               <label class="field" for="reason">
                 <span>สาเหตุการลา <b>*</b></span>
