@@ -894,3 +894,72 @@ input[type="date"]:valid::-webkit-datetime-edit {
   }
 }
 
+/* =====================================================
+   DATE INPUT SIZE = LEAVE AMOUNT INPUT
+   iOS / Android / LINE LIFF
+   ===================================================== */
+
+#leaveAmount,
+.date-input-wrap,
+#leaveFrom,
+#leaveTo {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* ให้ความสูงเท่ากัน */
+#leaveAmount,
+#leaveFrom,
+#leaveTo {
+  height: 48px !important;
+  min-height: 48px !important;
+
+  padding: 13px 14px !important;
+
+  border: 1px solid var(--line) !important;
+  border-radius: 14px !important;
+
+  background: var(--surface-2) !important;
+
+  font-family: inherit !important;
+  font-size: 16px !important;
+
+  box-sizing: border-box !important;
+}
+
+/* Wrapper วันที่สูงเท่ากับ input */
+.date-input-wrap {
+  height: 48px !important;
+  min-height: 48px !important;
+}
+
+/* จัดคำว่า "กรุณาเลือกวันที่" ให้อยู่กึ่งกลาง */
+.date-placeholder {
+  top: 50% !important;
+  left: 14px !important;
+
+  transform: translateY(-50%) !important;
+
+  margin: 0 !important;
+  padding: 0 6px 0 0 !important;
+
+  line-height: 1.2 !important;
+  font-size: 16px !important;
+}
+
+/* iOS Safari / LINE LIFF */
+#leaveFrom::-webkit-date-and-time-value,
+#leaveTo::-webkit-date-and-time-value {
+  min-height: 20px !important;
+  line-height: 20px !important;
+  text-align: left !important;
+}
+
+/* Calendar icon */
+#leaveFrom::-webkit-calendar-picker-indicator,
+#leaveTo::-webkit-calendar-picker-indicator {
+  margin: 0 !important;
+  padding: 0 !important;
+}
