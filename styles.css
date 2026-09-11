@@ -286,3 +286,56 @@ textarea { resize: vertical; min-height: 108px; }
   font-size: 12px;
   font-weight: 800;
 }
+
+/* =====================================================
+   LEAVE FORM - MOBILE INPUT WIDTH FIX
+   ===================================================== */
+
+/* ป้องกัน Grid item ดันความกว้างเกิน Card */
+.field-grid,
+.field-grid > .field,
+.two-col,
+.two-col > .field {
+  min-width: 0;
+  width: 100%;
+}
+
+/* ป้องกัน input / textarea หลุดขอบ */
+.field input,
+.field textarea,
+.number-box,
+.number-box input {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* แก้เฉพาะ Date input บน iPhone / Safari */
+input[type="date"] {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* วันที่บนมือถือให้เรียง 1 ช่องต่อแถว
+   และกว้างเท่ากับ Input อื่น */
+@media (max-width: 520px) {
+  .field-grid.two-col {
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+  }
+
+  .field-grid.two-col > .field {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .field-grid.two-col input[type="date"] {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+}
