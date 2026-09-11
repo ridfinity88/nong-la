@@ -339,3 +339,121 @@ input[type="date"] {
     min-width: 0;
   }
 }
+
+/* =====================================================
+   DATE INPUT FIX
+   iOS Safari / LINE LIFF / Android Chrome
+   ===================================================== */
+
+/* ป้องกัน element ภายใน card ขยายเกินพื้นที่ */
+.card,
+.field-grid,
+.field-grid.two-col,
+.field-grid > .field,
+.field {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Grid วันที่ */
+.field-grid.two-col {
+  width: 100%;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+/* แต่ละช่องใน Grid ต้องยอมย่อ */
+.field-grid.two-col > .field {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* บังคับ input ทุกชนิดให้อยู่ในกรอบ */
+.field input,
+.field textarea,
+.number-box,
+.number-box input {
+  display: block;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* =====================================================
+   FIX สำคัญสำหรับ input type=date
+   ===================================================== */
+
+#leaveFrom,
+#leaveTo,
+input[type="date"] {
+  display: block !important;
+
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+
+  inline-size: 100% !important;
+  min-inline-size: 0 !important;
+  max-inline-size: 100% !important;
+
+  box-sizing: border-box !important;
+
+  margin: 0 !important;
+
+  /* ป้องกัน native control ดันความกว้างบน iOS */
+  -webkit-appearance: none;
+  appearance: none;
+
+  overflow: hidden;
+
+  font-family: inherit;
+  font-size: 16px;
+}
+
+/* iOS Safari / WebView */
+#leaveFrom::-webkit-date-and-time-value,
+#leaveTo::-webkit-date-and-time-value,
+input[type="date"]::-webkit-date-and-time-value {
+  text-align: left;
+  min-width: 0;
+  margin: 0;
+}
+
+/* calendar icon ยังใช้งานได้ */
+#leaveFrom::-webkit-calendar-picker-indicator,
+#leaveTo::-webkit-calendar-picker-indicator,
+input[type="date"]::-webkit-calendar-picker-indicator {
+  flex: 0 0 auto;
+}
+
+/* =====================================================
+   MOBILE
+   ให้วันที่เป็น 1 ช่องต่อ 1 แถว
+   ความกว้างเท่ากับช่องสาเหตุการลา
+   ===================================================== */
+
+@media (max-width: 520px) {
+
+  .field-grid.two-col {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) !important;
+    width: 100%;
+    max-width: 100%;
+    gap: 14px;
+  }
+
+  .field-grid.two-col > .field {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  #leaveFrom,
+  #leaveTo {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+}
