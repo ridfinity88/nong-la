@@ -1,6 +1,6 @@
 window.APP_CONFIG = Object.freeze({
   LIFF_ID: '2011499508-tPfya4Ma',
-  GAS_WEB_APP_URL: 'https://script.google.com/macros/s/AKfycbzhN86balS4XEZ-A1m_z4iGGBVeX7lIBNDJGmRNngTOTfooMSwTGDhNC8XON8bbd4PD/exec',
+  GAS_WEB_APP_URL: 'https://script.google.com/macros/s/AKfycbzVahMwcCKhRGMHBL3IBTwPVs3ZM02XiVQpyEKgjXalrIZ-Uk3kmKQQeGVLCYjTF2xwzA/exec',
   DEPARTMENT: 'วิศวกรรมผลิต 1',
   APP_NAME: '>สวัสดีหนุ่มกะ(จะ)ลา',
   MOBILE_ONLY: true,
