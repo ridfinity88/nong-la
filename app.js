@@ -542,14 +542,32 @@ await loadDashboard();
     }
   }
 
-  async function sendFlex(flexMessage) {
-    try {
-      await liff.sendMessages([flexMessage]);
-    } catch (error) {
-      console.error('liff.sendMessages failed', error);
-      throw userError('LINE ไม่สามารถส่ง Flex Message ได้ กรุณาเปิด LIFF จากกลุ่ม LINE โดยตรง และตรวจว่าเปิด scope chat_message.write แล้ว');
-    }
+async function sendFlex(flexMessage) {
+  try {
+
+    await liff.sendMessages([flexMessage]);
+
+  } catch (error) {
+
+    console.error(
+      'liff.sendMessages failed',
+      error
+    );
+
+    const code =
+      error?.code ||
+      error?.status ||
+      '';
+
+    const detail =
+      error?.message ||
+      'Unknown LINE error';
+
+    throw userError(
+      `ส่ง Flex Message ไม่สำเร็จ${code ? ` (${code})` : ''}: ${detail}`
+    );
   }
+}
 
   async function retryFlex() {
     if (!state.lastReceipt) return;
